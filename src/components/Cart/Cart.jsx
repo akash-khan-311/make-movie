@@ -16,16 +16,27 @@ const Cart = ({
         <h2 className="text-3xl text-center">Total Expense : ${totalCost}</h2>
       </div>
       <div className="px-10">
-        {selectedActors.map((actor) => (
-          <div key={actor.id}>
-            <ol className="list-decimal list-inside py-3 text-xl cart-item my-4 px-3 rounded-lg flex justify-between items-center">
-              <li className="">{actor.name}</li>{" "}
-              <IconButton onClick={() => handleRemoveFromCart(actor)}>
-                X
-              </IconButton>
-            </ol>
-          </div>
-        ))}
+        <div>
+          <ol className="list-decimal  list-inside ">
+            {selectedActors.map((actor) => (
+              <div className="">
+                <li className="py-3 text-xl flex justify-between items-center my-4 px-3 rounded-lg cart-item">
+                  {actor.name}
+                  <span>
+                    <div className="">
+                      <IconButton
+                        className=""
+                        onClick={() => handleRemoveFromCart(actor)}
+                      >
+                        X
+                      </IconButton>
+                    </div>
+                  </span>
+                </li>
+              </div>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
