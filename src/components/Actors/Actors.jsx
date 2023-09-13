@@ -44,6 +44,8 @@ const Actors = () => {
     const newActors = selectedActors.filter(
       (newActors) => newActors.id !== actor.id
     );
+    setRemaining(actor.salary + remaining);
+    setTotalCost(totalCost- actor.salary );
     setSelectedActors(newActors);
   };
 
